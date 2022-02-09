@@ -1,0 +1,39 @@
+﻿/* ----- Validation and error messages class starts -----*/
+.validationsummary
+{
+    border: 1px solid Grey;
+    /*background: transparent url('../Images/WarningHeader.gif') no-repeat 12px 30px;*/
+    padding: 0px 0px 13px 0px;
+    font-size: 12px;
+    width: 100%;
+}
+.validationheader
+{
+    left: 0px;
+    position: relative;
+    font-size: 11px;
+    background-color: #e5d9bd;
+    color: #56300a;
+    height: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #b08b34;
+    padding-top: 3px;
+    background-image: linear-gradient(to bottom, #F5F4F9 0%, #ECEAF3 100%);
+}
+.validationsummary ul
+{
+    padding-top: 5px;
+    padding-left: 45px;
+    font-size: medium;
+    color: red;
+    font-style: normal;
+    font-family: Calibri;
+}
+.validationsummary ul li
+{
+    padding: 2px 0px 0px 15px;
+    background-image: url('../Images/Warning.gif');
+    background-position: 0px 3px;
+    background-repeat: no-repeat;
+}
+/* -- --Validation and error messages class ends -- --*/
