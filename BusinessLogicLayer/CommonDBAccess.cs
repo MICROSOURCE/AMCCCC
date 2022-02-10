@@ -1,11 +1,11 @@
 ﻿using Entity;
-using Microsoft.VisualBasic.CompilerServices;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.DAL;
 
 namespace BusinessLogicLayer
 {
@@ -53,7 +53,7 @@ namespace BusinessLogicLayer
         #region DeleteData
         public string DeleteData(Common_Mst_Ent CommEnt)
         {
-            using (var DBHelp = new DAL())
+            using (var DBHelp = new Dal())
             {
                 try
                 {
@@ -176,7 +176,7 @@ namespace BusinessLogicLayer
         {
             try
             {
-                using (var ObjDal = new DAL())
+                using (var ObjDal = new Dal())
                 {
                     {
                         var withBlock = _DictParam;
@@ -203,7 +203,7 @@ namespace BusinessLogicLayer
         public string GetRoleId(string UserId)
         {
             string Roleid;
-            using (var ObjDal = new DAL())
+            using (var ObjDal = new Dal())
             {
                 Roleid = ObjDal.GetScalarValue("SELECT dbo.GET_ROLEID('" + UserId + "')");
             }
@@ -218,7 +218,7 @@ namespace BusinessLogicLayer
         {
             try
             {
-                using (var ObjDal = new DAL())
+                using (var ObjDal = new Dal())
                 {
                     {
                         var withBlock = _DictParam;
@@ -246,7 +246,7 @@ namespace BusinessLogicLayer
         {
             try
             {
-                using (var ObjDal = new DAL())
+                using (var ObjDal = new Dal())
                 {
                     {
                         var withBlock = _DictParam;
@@ -274,7 +274,7 @@ namespace BusinessLogicLayer
         {
             string STR = "SELECT * FROM FUN_REPORTS_RIGHTS('" + Roll + "','" + REPORTTYPE + "')";
             var lstappl = new List<MST_Forms_Entities>();
-            using (var DBHelp = new DAL())
+            using (var DBHelp = new Dal())
             {
                 DataTable table = DBHelp.GetDataTableDirect(STR);
 
@@ -305,7 +305,7 @@ namespace BusinessLogicLayer
             var _Dict = new Dictionary<string, object>();
             DataSet _DS;
             _Dict.Add("@P_QUERY", str);
-            using (var Dal = new DAL())
+            using (var Dal = new Dal())
             {
                 _DS = Dal.GetDataSetStoredProcedure("PRO_GET_REPORT_DATA", _Dict);
             }
@@ -321,8 +321,8 @@ namespace BusinessLogicLayer
         {
             string STR = "";
             STR = "SELECT * FROM  VW_TRN_RECEIPT_PAYMODE WHERE CHQ_NO='" + CHQ_NO + "' AND CHQ_MICR='" + MICR_NO + "'";
-            STR = " AND '" + Conversions.ToDouble(CHQ_AMOUNT) + Conversions.ToDouble("' =(SELECT SUM(CHQ_AMOUNT) FROM  VW_TRN_RECEIPT_PAYMODE WHERE CHQ_NO='") + Conversions.ToDouble(CHQ_NO) + Conversions.ToDouble("' AND CHQ_MICR='") + Conversions.ToDouble(MICR_NO) + Conversions.ToDouble("')").ToString();
-            using (var dal = new DAL())
+            STR = " AND '" + CHQ_AMOUNT + "' =(SELECT SUM(CHQ_AMOUNT) FROM  VW_TRN_RECEIPT_PAYMODE WHERE CHQ_NO='" + CHQ_NO + "' AND CHQ_MICR='"+MICR_NO + "')";
+            using (var dal = new Dal())
             {
                 _DT = dal.GetDataTableDirect(STR);
             }
@@ -335,7 +335,7 @@ namespace BusinessLogicLayer
         #region Insert Application in Trn_Application Module
         public string InsertUpdateApplication(Application_Ent ObjEnt)
         {
-            using (var Dbhelp = new DAL())
+            using (var Dbhelp = new Dal())
             {
                 try
                 {
@@ -390,7 +390,7 @@ namespace BusinessLogicLayer
             try
             {
                 string str = "SELECT * FROM VW_TRN_APPLICATION WHERE APP_ID= '" + APP_ID + "';SELECT * FROM VW_TRN_APPLICATION WHERE APP_ID= '" + APP_ID + "';";
-                using (var ObjDal = new DAL())
+                using (var ObjDal = new Dal())
                 {
                     _DS = ObjDal.GetDataSet(str);
                 }
@@ -408,7 +408,7 @@ namespace BusinessLogicLayer
         #region AdvanceSearch
         public DataSet AdvanceSearch(Dictionary<string, object> _ObjDict)
         {
-            using (var ObjDll = new DAL())
+            using (var ObjDll = new Dal())
             {
                 try
                 {
@@ -429,7 +429,7 @@ namespace BusinessLogicLayer
         public string GetScalarvalue(string Str)
         {
             string Id = "";
-            using (var dal = new DAL())
+            using (var dal = new Dal())
             {
                 Id = dal.GetScalarValue(Str);
             }
@@ -443,7 +443,7 @@ namespace BusinessLogicLayer
         public DataTable GetDatatable(string Str)
         {
             DataTable _dt;
-            using (var dal = new DAL())
+            using (var dal = new Dal())
             {
                 _dt = dal.GetDataTableDirect(Str);
             }
@@ -456,7 +456,7 @@ namespace BusinessLogicLayer
         #region GetDataDataSetEXCL
         public DataSet GetDataDataSetEXCL(Common_Mst_Ent CommEnt)
         {
-            using (var SqlHelp = new DAL())
+            using (var SqlHelp = new Dal())
             {
                 try
                 {
@@ -495,7 +495,7 @@ namespace BusinessLogicLayer
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
     }
 }
