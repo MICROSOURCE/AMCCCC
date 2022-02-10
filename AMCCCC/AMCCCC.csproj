@@ -321,6 +321,7 @@
     <Content Include="assets\plugins\select2\select2.min.js" />
     <Content Include="assets\plugins\select2\select2.png" />
     <Content Include="assets\plugins\select2\select2x2.png" />
+    <Content Include="Constr.xml" />
     <Content Include="css\ChequeReturn.js" />
     <Content Include="css\Custom.css" />
     <Content Include="css\datepicker.css" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AMCCCC.Login" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AMCCCC.Login" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <!-- start: LOGIN BOX --> 
-        <div class="box-login">
+        <div class="box-login"> 
             <h3 class="center">
                 Sign in to your account</h3>
             <br />
@@ -49,7 +49,7 @@
                 </div>
                 <div class="form-actions">
                     
-                    <asp:LinkButton ID="btnSubmit" runat="server" class="btn btn-bricky pull-right">Login <i class="fa fa-arrow-circle-right"></i> </asp:LinkButton>
+                    <asp:LinkButton ID="btnSubmit" runat="server" class="btn btn-bricky pull-right" OnClick="btnSubmit_Click">Login <i class="fa fa-arrow-circle-right"></i> </asp:LinkButton>
                 </div>
                 <div>
                     <asp:Label ID="lblMSG" runat="server" ForeColor="Red"></asp:Label>
