@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.DAL;
+//using Entity.ENT;
 
 namespace BusinessLogicLayer
 {
-    public class Class1
+    public class LoginDBAccess : DataAccessLayer.Class1
     {
     }
 }

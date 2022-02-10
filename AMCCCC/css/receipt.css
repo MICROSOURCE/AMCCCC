@@ -1,0 +1,40 @@
+.form-group
+{
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+}
+.panel
+{
+    margin-bottom: 5px;
+}
+.form-group .col-sm-2
+{
+    /*Increase Bottom Margin only*/
+    padding-right: 0px;
+}
+.fontbold
+{
+    font-weight: bold;
+}
+.txtaligncenter
+{
+    text-align: center;
+}
+.nopadding_rl
+{
+    padding-left:0px;
+    padding-right:0px;
+    }
+.rightalign
+{
+    text-align:right;
+    }
+.leftalign
+{
+    text-align:left;
+    }
+.btn:focus
+{
+    background-color:#fff;
+    color:#000000;
+    }        
