@@ -321,11 +321,8 @@
     <Content Include="assets\plugins\select2\select2.min.js" />
     <Content Include="assets\plugins\select2\select2.png" />
     <Content Include="assets\plugins\select2\select2x2.png" />
-    <Content Include="bin\AMCCCC.dll" />
-    <Content Include="bin\BusinessLogicLayer.dll" />
     <Content Include="bin\DataAccessLayer.dll" />
     <Content Include="bin\DataAccessLayer.xml" />
-    <Content Include="bin\Entity.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\roslyn\csc.exe" />
@@ -435,9 +432,11 @@
     <Content Include="JQuery\TestAJX.js" />
     <Content Include="JQuery\zebra_dialog.js" />
     <Content Include="Login.aspx" />
+    <Content Include="TRANSACTION\TRN_New_Assesment.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Utils.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -452,7 +451,21 @@
     <Compile Include="MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="MasterPages\MainMaster.Master.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\MainMaster.Master.designer.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TRANSACTION\TRN_New_Assesment.aspx.cs">
+      <DependentUpon>TRN_New_Assesment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSACTION\TRN_New_Assesment.aspx.designer.cs">
+      <DependentUpon>TRN_New_Assesment.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MainMaster.Master" />
@@ -512,6 +525,7 @@
     <Content Include="assets\fonts\fonts\clip-font.woff" />
     <Content Include="assets\images\Thumbs.db" />
     <Content Include="assets\less\styles.less" />
+    <Content Include="MasterPages\MainMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
