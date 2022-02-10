@@ -444,13 +444,6 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MainMaster.Master.cs">
-      <DependentUpon>MainMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MainMaster.Master.designer.cs">
-      <DependentUpon>MainMaster.Master</DependentUpon>
-    </Compile>
     <Compile Include="MasterPages\MainMaster.Master.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -468,7 +461,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MainMaster.Master" />
     <Content Include="assets\plugins\bootstrap-modal\component.json" />
     <Content Include="assets\plugins\bootstrap-modal\composer.json" />
     <Content Include="assets\plugins\bootstrap-modal\LICENSE" />
