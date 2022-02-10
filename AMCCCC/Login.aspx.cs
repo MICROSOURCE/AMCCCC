@@ -80,7 +80,7 @@ namespace AMCCCC
                         Session["USER_TYPE"] = StrArr[5];
                         Session["ROLE_DESC"] = StrArr[2];
                         Session["MENU"] = "";
-                        Session["MOD_ID"] = "02";
+                        Session["MOD_ID"] = "10";
                         Response.Redirect("~/Home.aspx");
                     }
                     else
