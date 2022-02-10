@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Common_Mst_Ent
+    public class Common_Mst_Ent : IDisposable
     {
+        #region "Property"
         public string MODE { get; set; }
         public string ACTIVE { get; set; }
         public string LST_USER { get; set; }
@@ -24,7 +25,7 @@ namespace Entity
         public string CR_USER { get; set; }
         public DateTime? CR_DATE { get; set; }
         public string CR_IP { get; set; }
-        public string UP_USER   { get; set; }
+        public string UP_USER { get; set; }
         public DateTime? UP_DATE { get; set; }
         public string UP_IP { get; set; }
         public string DEL_USER { get; set; }
@@ -35,7 +36,14 @@ namespace Entity
         public string PARAM2 { get; set; }
         public string PARAM3 { get; set; }
         public DateTime? FROM_DATE { get; set; }
-        public string TO_DATE { get; set; }
+        public DateTime? TO_DATE { get; set; }
         public string ROLE_ID { get; set; }
+        #endregion
+        #region IDisposable Support
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
     }
 }
