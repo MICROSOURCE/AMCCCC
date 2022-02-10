@@ -41,9 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application_Ent.cs" />
     <Compile Include="Common_Mst_Ent.cs" />
+    <Compile Include="Common_Trn_Ent.cs" />
     <Compile Include="Login_Ent.cs" />
+    <Compile Include="Menu_Entities.cs" />
+    <Compile Include="MST_Forms_Entities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rights_Entities.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
