@@ -1,4 +1,5 @@
-﻿using AMCCCC.Helper;
+﻿
+using AMCCCC.Helper;
 using BusinessLogicLayer.TRANSACTION;
 using Entity.TRANSACTION;
 using System;
@@ -39,9 +40,9 @@ namespace AMCCCC.TRANSACTION
         {
             try
             {
-                Utils.FillCombo(ddlUSAGE_FACTOR_CODE, "PROP_TYPE","");
+                Utils.FillCombo(ddlUSAGE_FACTOR_CODE, "PROP_TYPE", "");
                 Utils.FillCombo(ddlLOCATION_FACTOR2008, "LOCATION_FACTOR", "");
-                Utils.FillCombo(ddlLOCATION_FACTOR2013, "LOCATION_FACTOR","");
+                Utils.FillCombo(ddlLOCATION_FACTOR2013, "LOCATION_FACTOR", "");
                 Utils.FillCombo(ddlLOCATION_FACTOR2021, "LOCATION_FACTOR", "");
                 Utils.FillCombo(ddlOCCUPANCY_FACTOR_CODE, "OCCUPANCY", "");
             }
@@ -129,8 +130,7 @@ namespace AMCCCC.TRANSACTION
             {
                 Utils.ShowMessage("E", ex.Message.ToString());
             }
-        }
-
+        }       
         protected void ddlUSAGE_FACTOR_CODE_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -175,7 +175,7 @@ namespace AMCCCC.TRANSACTION
         {
             try
             {
-                txtUSAGE_TYPE_RATE.Text = ddlUSAGE_CODE.SelectedItem.Text.Split("~")(1);
+                txtUSAGE_TYPE_RATE.Text = ddlUSAGE_CODE.SelectedItem.Text.Split('~')[1];
             }
             catch (Exception ex)
             {
@@ -190,7 +190,7 @@ namespace AMCCCC.TRANSACTION
             {
                 if (ddlOCCUPANCY_FACTOR_CODE.SelectedIndex > 0)
                 {
-                    txtOCCUPANCY_RATE.Text = ddlOCCUPANCY_FACTOR_CODE.SelectedItem.Text.Split("~")(1);
+                    txtOCCUPANCY_RATE.Text = ddlOCCUPANCY_FACTOR_CODE.SelectedItem.Text.Split('~')[1];
                 }
             }
             catch (Exception ex)
@@ -199,5 +199,5 @@ namespace AMCCCC.TRANSACTION
             }
         }
     }
-    
+
 }

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="TRN_New_Assesment.aspx.cs" Inherits="AMCCCC.TRANSACTION.TRN_New_Assesment" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="TRN_New_Assesment.aspx.cs" Inherits="AMCCCC.TRANSACTION.TRN_New_Assesment" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
         <div class="row">
@@ -120,11 +119,7 @@
             <div class="col-sm-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-pencil-square"></i>Property Address
-                    <div class="panel-tools">
-                        <a href="#" class="btn btn-xs btn-link panel-collapse collapses"></a>
-                    </div>
-                    </div>
+                        <i class="fa fa-pencil-square"></i>Property Address</div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-3">
@@ -647,7 +642,7 @@
                                                 Building Type<span class="symbol required"></span>
 
                                             </label>
-                                            <asp:DropDownList ID="ddlBUILDING_TYPE" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlBUILDING_TYPE_SelectedIndexChanged1"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlBUILDING_TYPE" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlBUILDING_TYPE_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
 
                                     </div>
@@ -657,7 +652,7 @@
                                                 Usage Code<span class="symbol required"></span>
 
                                             </label>
-                                            <asp:DropDownList ID="ddlUSAGE_CODE" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlUSAGE_CODE_SelectedIndexChanged1"></asp:DropDownList>
+                                            <asp:DropDownList ID="ddlUSAGE_CODE" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlUSAGE_CODE_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
