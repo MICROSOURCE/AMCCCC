@@ -322,6 +322,50 @@
     <Content Include="assets\plugins\select2\select2.min.js" />
     <Content Include="assets\plugins\select2\select2.png" />
     <Content Include="assets\plugins\select2\select2x2.png" />
+    <Content Include="bin\DataAccessLayer.dll" />
+    <Content Include="bin\DataAccessLayer.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="Constr.xml" />
     <Content Include="css\ChequeReturn.js" />
     <Content Include="css\Custom.css" />
     <Content Include="css\datepicker.css" />
@@ -367,6 +411,14 @@
     <Content Include="JQuery\bootbox.min.js" />
     <Content Include="JQuery\CommonFunction.js" />
     <Content Include="JQuery\InsertUpdate.js" />
+    <Content Include="bin\AMCCCC.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="JQuery\jquery-1.10.2.intellisense.js" />
     <Content Include="JQuery\jquery-1.10.2.js" />
     <Content Include="JQuery\jquery-1.7.2.js" />
@@ -382,6 +434,7 @@
     <Content Include="JQuery\zebra_dialog.js" />
     <Content Include="Login.aspx" />
     <Content Include="TRANSACTION\TRN_New_Assesment.aspx" />
+    <Content Include="TRANSACTION\View_Tax_Details.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -393,11 +446,11 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MainMaster.Master.cs">
+    <Compile Include="MasterPages\MainMaster.Master.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MainMaster.Master.designer.cs">
+    <Compile Include="MasterPages\MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -408,9 +461,15 @@
     <Compile Include="TRANSACTION\TRN_New_Assesment.aspx.designer.cs">
       <DependentUpon>TRN_New_Assesment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TRANSACTION\View_Tax_Details.aspx.cs">
+      <DependentUpon>View_Tax_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSACTION\View_Tax_Details.aspx.designer.cs">
+      <DependentUpon>View_Tax_Details.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MainMaster.Master" />
     <Content Include="assets\plugins\bootstrap-modal\component.json" />
     <Content Include="assets\plugins\bootstrap-modal\composer.json" />
     <Content Include="assets\plugins\bootstrap-modal\LICENSE" />
@@ -467,6 +526,7 @@
     <Content Include="assets\fonts\fonts\clip-font.woff" />
     <Content Include="assets\images\Thumbs.db" />
     <Content Include="assets\less\styles.less" />
+    <Content Include="MasterPages\MainMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

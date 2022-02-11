@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="row">
+        <div class="row">
         <div class="col-sm-12">
             <div class="page-header">
                 <h5>
@@ -12,7 +12,9 @@
             </div>
         </div>
     </div>
-    <div class="row" id="maindiv">
+     <div class="row" id="maindiv">
+
+
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-default">
@@ -23,6 +25,7 @@
                     </div>
                     </div>
                     <div class="panel-body">
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="form-group">
@@ -32,6 +35,7 @@
                                     <asp:TextBox ID="txtPT_TENEMENT_NUMBER" runat="server" CssClass="form-control " ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
+
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label class=" control-label">
@@ -39,10 +43,12 @@
                                     </label>
                                     <asp:TextBox ID="txtCOMPLAINT_NUMBER" runat="server" CssClass="form-control" ClientIDMode="Static"
                                         MaxLength="50"></asp:TextBox>
+
                                 </div>
                             </div>
                             <div class="col-sm-3 ">
                                 <div class="form-group">
+
                                     <label class="control-label">
                                         Effective From Date
                                     </label>
@@ -50,6 +56,8 @@
                                         <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control date-picker" date-date-format="dd-mm-yyyy"
                                             ClientIDMode="Static"> </asp:TextBox><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     </div>
+
+
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -60,6 +68,10 @@
                                     <asp:TextBox ID="txtPERMISSION_NUMBER" runat="server" CssClass="form-control" ClientIDMode="Static"></asp:TextBox>
                                 </div>
                             </div>
+
+
+
+
                         </div>
                         <div class="row">
                             <div class="col-sm-3">
@@ -418,7 +430,7 @@
                                     <Columns>
                                         <asp:TemplateField HeaderText="ID">
                                             <ItemTemplate>
-                                           <%--     <asp:Label ID="lnkSelect" runat="server" Text='<%# EVAL("SR_NO") %>' />--%>
+                                                <asp:Label ID="lnkSelect" runat="server" Text='<%# Eval("SR_NO") %>' />
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:BoundField DataField="OWNER_NAME" HeaderText="માલિકનું નામ" />
@@ -511,7 +523,7 @@
 
 
     </div>
-    <asp:UpdatePanel runat="server" ID="factor">
+     <asp:UpdatePanel runat="server" ID="factor">
         <ContentTemplate>
 
             <div class="row" id="factordetails">
@@ -951,7 +963,7 @@
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="ID">
                                                         <ItemTemplate>
-                                                        <%--    <asp:Label ID="lnkSelect" runat="server" Text='<%# EVAL("OWNER_ID") %>' />--%>
+                                                            <asp:Label ID="lnkSelect" runat="server" Text='<%# Eval("OWNER_ID") %>' />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:BoundField DataField="OWNER_NAME" HeaderText="માલિકનું નામ" />
