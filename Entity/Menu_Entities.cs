@@ -17,7 +17,7 @@ namespace Entity
         public string F_PARENT { get; set; }
         public string ACCESS { get; set; }
         public string CSS_CLASS { get; set; }
-
         public string FOLDER_NAME { get; set; }
+        
     }
 }

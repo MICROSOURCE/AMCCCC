@@ -48,6 +48,7 @@
       <HintPath>bin\DataAccessLayer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -433,10 +434,11 @@
     <Content Include="JQuery\zebra_dialog.js" />
     <Content Include="Login.aspx" />
     <Content Include="TRANSACTION\TRN_New_Assesment.aspx" />
+    <Content Include="TRANSACTION\View_Tax_Details.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Utils.cs" />
+    <Compile Include="Helper\Utils.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +460,13 @@
     </Compile>
     <Compile Include="TRANSACTION\TRN_New_Assesment.aspx.designer.cs">
       <DependentUpon>TRN_New_Assesment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSACTION\View_Tax_Details.aspx.cs">
+      <DependentUpon>View_Tax_Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSACTION\View_Tax_Details.aspx.designer.cs">
+      <DependentUpon>View_Tax_Details.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
