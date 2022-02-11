@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\DataAccessLayer.dll</HintPath>
+      <HintPath>..\AMCCCC\bin\DataAccessLayer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CommonDBAccess.cs" />
     <Compile Include="LoginDBAccess.cs" />
+    <Compile Include="MenuDBAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

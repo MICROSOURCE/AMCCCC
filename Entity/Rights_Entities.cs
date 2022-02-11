@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Rights_Entities
+    public class Rights_Entities : Common_Mst_Ent
     {
         public string ROLE_ID { get; set; }
         public string FORM_ID { get; set; }

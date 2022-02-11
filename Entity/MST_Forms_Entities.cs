@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class MST_Forms_Entities
+    public class MST_Forms_Entities : Common_Mst_Ent
     {
         public string FORM_ID { get; set; }
         public string MODULE_ID { get; set; }
