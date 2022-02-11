@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AMCCCC
+namespace AMCCCC.MasterPages
 {
 
 
