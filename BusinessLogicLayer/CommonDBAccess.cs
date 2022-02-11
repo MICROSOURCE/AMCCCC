@@ -141,6 +141,7 @@ namespace BusinessLogicLayer
         #endregion
 
         #region GetDataTableForComboStr
+
         public DataTable GetDataTableForComboStr(string Flag, string Param, string Param1 = "", string P_PARAM2 = "", string P_CR_USER = "", string P_ROLE_ID = "")
         {
             try
@@ -157,7 +158,6 @@ namespace BusinessLogicLayer
                         withBlock.Add("P_CR_USER", P_CR_USER);
                         withBlock.Add("P_ROLE_ID", P_ROLE_ID);
                     }
-
                     _DT = ObjDal.GetDataTableFromStoredProcedure("AMCPT.PRO_FILLCOMBO", _DictParam);
                 }
             }
@@ -165,7 +165,6 @@ namespace BusinessLogicLayer
             {
                
             }
-
             return _DT;
         }
 
