@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="TRN_New_Assesment.aspx.cs" Inherits="AMCCCC.TRANSACTION.TRN_New_Assesment" %>
 
+
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
         <div class="row">
         <div class="col-sm-12">
@@ -119,7 +120,11 @@
             <div class="col-sm-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-pencil-square"></i>Property Address</div>
+                        <i class="fa fa-pencil-square"></i>Property Address
+                    <div class="panel-tools">
+                        <a href="#" class="btn btn-xs btn-link panel-collapse collapses"></a>
+                    </div>
+                    </div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-3">
@@ -413,7 +418,7 @@
 
                         <div class="form-group">
                             <div class="text-center">
-                                <asp:LinkButton ID="btnADD_OWNER" runat="server" CssClass="btn btn-primary" ValidationGroup="ValADDOWNER"><i class="fa fa-plus"></i> Add Item</asp:LinkButton>
+                                <asp:LinkButton ID="btnADD_OWNER" runat="server" CssClass="btn btn-primary" ValidationGroup="ValADDOWNER" OnClick="btnADD_OWNER_Click"><i class="fa fa-plus"></i> Add Item</asp:LinkButton>
                                 <asp:LinkButton ID="btnCLEAR_OWNER" runat="server" CssClass="btn btn-purple"><i class="fa fa-refresh"></i> Reset</asp:LinkButton>
                             </div>
                         </div>
@@ -642,7 +647,7 @@
                                                 Building Type<span class="symbol required"></span>
 
                                             </label>
-                                            <asp:DropDownList ID="ddlBUILDING_TYPE" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlBUILDING_TYPE_SelectedIndexChanged"></asp:DropDownList>
+                                     <asp:DropDownList ID="ddlBUILDING_TYPE" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlBUILDING_TYPE_SelectedIndexChanged"></asp:DropDownList>
                                         </div>
 
                                     </div>
@@ -699,7 +704,7 @@
                                                 Land Value<span class="symbol required"></span>
 
                                             </label>
-                                            <asp:TextBox ID="txtland_value2008" runat="server" CssClass="form-control" AutoPostBack="true"></asp:TextBox>
+                                            <asp:TextBox ID="txtland_value2008" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtland_value2008_TextChanged"></asp:TextBox>
                                         </div>
 
                                     </div>
@@ -739,7 +744,7 @@
                                                 Land Value<span class="symbol required"></span>
 
                                             </label>
-                                            <asp:TextBox ID="txtLAND_VALUE2013" runat="server" CssClass="form-control" AutoPostBack="true"></asp:TextBox>
+                                            <asp:TextBox ID="txtLAND_VALUE2013" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtLAND_VALUE2013_TextChanged"></asp:TextBox>
                                         </div>
 
                                     </div>
@@ -779,7 +784,7 @@
                                                 Land Value<span class="symbol required"></span>
 
                                             </label>
-                                            <asp:TextBox ID="txtLAND_VALUE2021" runat="server" CssClass="form-control" AutoPostBack="true"></asp:TextBox>
+                                            <asp:TextBox ID="txtLAND_VALUE2021" runat="server" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtLAND_VALUE2021_TextChanged"></asp:TextBox>
                                         </div>
 
                                     </div>
@@ -889,7 +894,7 @@
                                                 Floor Description
                                             </label>
 
-                                            <asp:DropDownList runat="server" ID="ddlPT_FLOOR_DTLS_CODE" CssClass="form-control" AutoPostBack="true"></asp:DropDownList>
+                                            <asp:DropDownList runat="server" ID="ddlPT_FLOOR_DTLS_CODE" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlPT_FLOOR_DTLS_CODE_SelectedIndexChanged"></asp:DropDownList>
 
 
 

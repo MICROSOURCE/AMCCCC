@@ -1,6 +1,7 @@
-﻿
-using AMCCCC.Helper;
+﻿using AMCCCC.Helper;
+using BusinessLogicLayer;
 using BusinessLogicLayer.TRANSACTION;
+using Entity;
 using Entity.TRANSACTION;
 using System;
 using System.Data;
@@ -40,9 +41,9 @@ namespace AMCCCC.TRANSACTION
         {
             try
             {
-                Utils.FillCombo(ddlUSAGE_FACTOR_CODE, "PROP_TYPE", "");
+                Utils.FillCombo(ddlUSAGE_FACTOR_CODE, "PROP_TYPE","");
                 Utils.FillCombo(ddlLOCATION_FACTOR2008, "LOCATION_FACTOR", "");
-                Utils.FillCombo(ddlLOCATION_FACTOR2013, "LOCATION_FACTOR", "");
+                Utils.FillCombo(ddlLOCATION_FACTOR2013, "LOCATION_FACTOR","");
                 Utils.FillCombo(ddlLOCATION_FACTOR2021, "LOCATION_FACTOR", "");
                 Utils.FillCombo(ddlOCCUPANCY_FACTOR_CODE, "OCCUPANCY", "");
             }
@@ -130,7 +131,8 @@ namespace AMCCCC.TRANSACTION
             {
                 Utils.ShowMessage("E", ex.Message.ToString());
             }
-        }       
+        }
+
         protected void ddlUSAGE_FACTOR_CODE_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -175,7 +177,7 @@ namespace AMCCCC.TRANSACTION
         {
             try
             {
-                txtUSAGE_TYPE_RATE.Text = ddlUSAGE_CODE.SelectedItem.Text.Split('~')[1];
+                txtUSAGE_TYPE_RATE.Text = ddlUSAGE_CODE.SelectedItem.Text.Split(new Char[] { '~' }).ToString();
             }
             catch (Exception ex)
             {
@@ -190,13 +192,226 @@ namespace AMCCCC.TRANSACTION
             {
                 if (ddlOCCUPANCY_FACTOR_CODE.SelectedIndex > 0)
                 {
-                    txtOCCUPANCY_RATE.Text = ddlOCCUPANCY_FACTOR_CODE.SelectedItem.Text.Split('~')[1];
+                    txtOCCUPANCY_RATE.Text = ddlOCCUPANCY_FACTOR_CODE.SelectedItem.Text.Split(new Char[] { '~' }).ToString();
                 }
             }
             catch (Exception ex)
             {
                 Utils.ShowMessage("E", ex.Message.ToString());
             }
+        }
+
+        protected void ddlPT_FLOOR_DTLS_CODE_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ddlPT_FLOOR_DTLS_CODE.SelectedIndex > 0)
+                {
+                    txtDISCOUNT_RATE.Text = ddlPT_FLOOR_DTLS_CODE.SelectedItem.Text.Split(new Char[] { '~' }).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowMessage("E", ex.Message.ToString());
+            }
+        }
+
+        protected void txtland_value2008_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ddlUSAGE_FACTOR_CODE.SelectedIndex > 0 & Convert.ToInt32(txtland_value2008.Text) > 0)
+                {
+                    using (var oBJeNT = new Common_Mst_Ent())
+                    {
+                        oBJeNT.FLAG = "LANDVAL_2008";
+                        oBJeNT.PARAM = ddlUSAGE_FACTOR_CODE.SelectedValue;
+                        oBJeNT.PARAM1 =txtland_value2008.Text;
+                        oBJeNT.CR_USER = Convert.ToString(Session["USER_ID"]);
+                        oBJeNT.ROLE_ID = Convert.ToString(Session["USER_ROLE"]);
+                        using (var OBJBAL = new CommonDBAccess())
+                        {
+                            _DT = OBJBAL.GetData("AMCPT.PRO_GET_MST_DATA", oBJeNT);
+                        }
+                    }
+
+                    if (_DT.Rows.Count > 0)
+                    {
+                        ddlLOCATION_FACTOR2008.SelectedValue = Convert.ToString(_DT.Rows[0]["LOCATION_TYPE_DESC_CODE"].ToString());
+                        txtLOC_FACTOR_RATE2008.Text = Convert.ToString(_DT.Rows[0]["LOCATION_FACTOR_RATE"].ToString());
+                    }
+                }
+                else
+                {
+                    ddlLOCATION_FACTOR2008.SelectedIndex = 0;
+                    txtLOC_FACTOR_RATE2008.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowMessage("E", ex.Message.ToString());
+            }
+        }
+
+        protected void txtLAND_VALUE2013_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ddlUSAGE_FACTOR_CODE.SelectedIndex > 0 & Convert.ToInt32(txtLAND_VALUE2013.Text) > 0)
+                {
+                    using (var oBJeNT = new Common_Mst_Ent())
+                    {
+                        oBJeNT.FLAG = "LANDVAL_2013";
+                        oBJeNT.PARAM = ddlUSAGE_FACTOR_CODE.SelectedValue;
+                        oBJeNT.PARAM1 = txtLAND_VALUE2013.Text;
+                        oBJeNT.CR_USER = Convert.ToString(Session["USER_ID"]);
+                        oBJeNT.ROLE_ID = Convert.ToString(Session["USER_ROLE"]);
+                        using (var OBJBAL = new CommonDBAccess())
+                        {
+                            _DT = OBJBAL.GetData("AMCPT.PRO_GET_MST_DATA", oBJeNT);
+                        }
+                    }
+
+                    if (_DT.Rows.Count > 0)
+                    {
+                        txtLOC_FACTOR_RATE2013.Text = Convert.ToString(_DT.Rows[0]["LOCATION_FACTOR_RATE"]);
+                        ddlLOCATION_FACTOR2013.SelectedValue = Convert.ToString(_DT.Rows[0]["LOCATION_TYPE_DESC_CODE"]);
+                    }
+                }
+                else
+                {
+                    ddlLOCATION_FACTOR2013.SelectedIndex = 0;
+                    txtLOC_FACTOR_RATE2013.Text = Convert.ToString(_DT.Rows[0]["LOCATION_FACTOR_RATE"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowMessage("E", ex.Message.ToString());
+            }
+        }
+
+        protected void txtLAND_VALUE2021_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ddlUSAGE_FACTOR_CODE.SelectedIndex > 0 & Convert.ToInt32(txtLAND_VALUE2021.Text) > 0)
+                {
+                    using (var oBJeNT = new Common_Mst_Ent())
+                    {
+                        oBJeNT.FLAG = "LANDVAL_2013";
+                        oBJeNT.PARAM = ddlUSAGE_FACTOR_CODE.SelectedValue;
+                        oBJeNT.PARAM1 = txtLAND_VALUE2021.Text;
+                        oBJeNT.CR_USER = Convert.ToString(Session["USER_ID"]);
+                        oBJeNT.ROLE_ID = Convert.ToString(Session["USER_ROLE"]);
+                        using (var OBJBAL = new CommonDBAccess())
+                        {
+                            _DT = OBJBAL.GetData("AMCPT.PRO_GET_MST_DATA", oBJeNT);
+                        }
+                    }
+
+                    if (_DT.Rows.Count > 0)
+                    {
+                        ddlLOCATION_FACTOR2021.SelectedValue = Convert.ToString(_DT.Rows[0]["LOCATION_TYPE_DESC_CODE"]);
+                        txtLOC_FACTOR_RATE2021.Text = Convert.ToString(_DT.Rows[0]["LOCATION_FACTOR_RATE"]);
+                    }
+                }
+                else
+                {
+                    ddlLOCATION_FACTOR2021.SelectedIndex = 0;
+                    txtLOC_FACTOR_RATE2021.Text = Convert.ToString(_DT.Rows[0]["LOCATION_FACTOR_RATE"]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowMessage("E", ex.Message.ToString());
+            }
+        }
+
+        private DataTable OwnerDetDatatable()
+        {
+            var _dtown = new DataTable();
+            _dtown.Columns.Add("OWNER_NAME");
+            _dtown.Columns.Add("MOBILE_NO");
+            _dtown.Columns.Add("LANDLINE_NO");
+            _dtown.Columns.Add("FAX_NO");
+            _dtown.Columns.Add("EMAIL");
+            _dtown.Columns.Add("SR_NO");
+            return _dtown;
+        }
+
+        private void AddOwnerToGrid()
+        {
+            try
+            {
+                var DT = new DataTable();
+                if (ViewState["Add"].ToString() == "1")
+                {
+                    DT = (DataTable)ViewState["data"];
+                }
+
+                if (ViewState["Add"].ToString() == "0")
+                {
+                    DT = OwnerDetDatatable();
+                }
+
+                if (ViewState["index"].ToString() == "")
+                {
+                    _DR = DT.NewRow();
+                }
+                else
+                {
+                    DT.PrimaryKey = new DataColumn[] { DT.Columns["SR_NO"] };
+                    _DR = DT.Rows.Find(Session["SR_NO"]);
+                }
+
+                if (ViewState["index"].ToString() == "")
+                {
+                    _DR["SR_NO"] = ViewState["SR_NO"];
+                }
+                else
+                {
+                    _DR["SR_NO"] = Session["SR_NO"].ToString();
+                }
+          
+
+
+                // 'Set Value In Datatable
+            _DR["OWNER_NAME"] = txtOFULL_NAME.Text.Trim();
+                _DR["MOBILE_NO"] = txtOMOBILE_NO.Text.Trim();
+                _DR["LANDLINE_NO"] = txtOLANDLINE_NO.Text.Trim();
+                _DR["FAX_NO"] = txtOFAX_NO.Text.Trim();
+                _DR["EMAIL"] = txtOEMAIL.Text.Trim();
+                if (ViewState["index"].ToString() == "")
+                {
+                   _DT.Rows.Add(_DR);
+                }
+
+                grvOWNER.DataSource = _DT;
+                grvOWNER.DataBind();
+                ViewState["data"] = _DT;
+                ViewState["Add"] = "1";
+                ViewState["index"] = "";
+                Session["SR_NO"] = "";
+                ViewState["SR_NO"] = ViewState["SR_NO"].ToString() + 1;
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowMessage("E", ex.Message.ToString());
+            }
+        }
+
+        protected void btnADD_OWNER_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddOwnerToGrid();
+
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowMessage("E", ex.Message.ToString());
+            }
+
         }
     }
 
