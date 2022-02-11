@@ -19,6 +19,7 @@ namespace AMCCCC.App_Code
         public void ShowMessage(string TYPE, string MESSAGE)
         {
             MESSAGE = MESSAGE.Replace("", "");
+            
             //public Page page=new Page(); 
             //page = HttpContext.Current.CurrentHandler;
         }

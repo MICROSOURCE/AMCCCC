@@ -25,7 +25,7 @@ namespace AMCCCC.TRANSACTION
             }
             catch (Exception ex)
             {
-                Utils.ShowMessage("E", ex.Message.ToString)
+                //Utils.ShowMessage("E", ex.Message.ToString)
             }
         }
     }
