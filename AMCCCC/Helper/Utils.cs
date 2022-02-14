@@ -2,10 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,23 +11,22 @@ namespace AMCCCC.Helper
 {
     public class Utils
     {
-        #region variable
+        #region Variable
+
 
         private static Dictionary<object, object> _Dict;
         private static IDictionary<object, object> lst;
         private static string _message;
+        public static string Message;
+        public static DataTable _DT;
 
         #endregion
 
-        public static void ShowMessage(string type, string MESSAGE)
+        public static void ShowMessage(string TYPE, string MESSAGE)
         {
-            MESSAGE = MESSAGE;//.Replace(Constants.vbCr, "").Replace(Constants.vbLf, "").Replace("'", "").Replace("\"", "");
-                              // var page = new Page();
-                              //page = HttpContext.Current.CurrentHandler;
-            //Page.ClientScript.RegisterStartupScript(GetType(), "message", "Message()", true);
-           // Page.ClientScript.RegisterStartupScript(GetType(), "key", "ShowMessage('" + type + "','" + MESSAGE + "');", true);
+            
         }
-        #region "!-- FillCombo--!"
+
         public static void FillCombo(DropDownList pCmb, string flag, string incExp)
         {
             lst = GetComboSql(flag, incExp);
@@ -41,7 +37,7 @@ namespace AMCCCC.Helper
             pCmb.Items.Insert(0, "--SELECT--");
             pCmb.Items.FindByText("--SELECT--").Selected = true;
         }
-        #endregion
+
         #region getComboSql
         public static IDictionary<object, object> GetComboSql(string Flag, string IncExp = null)
         {
@@ -144,5 +140,6 @@ namespace AMCCCC.Helper
             return result;
         }
         #endregion
+
     }
 }
