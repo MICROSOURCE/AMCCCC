@@ -26,6 +26,7 @@ namespace BusinessLogicLayer
                 try
                 {
                     {
+                        _DictParam = new Dictionary<string, object>();
                         var withBlock = _DictParam;
                         withBlock.Clear();
                         withBlock.Add("P_USER_ID", EntLogin.USER_ID);

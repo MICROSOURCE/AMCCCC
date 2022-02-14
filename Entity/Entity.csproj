@@ -49,6 +49,7 @@
     <Compile Include="MST_Forms_Entities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rights_Entities.cs" />
+    <Compile Include="TRANSACTION\New_Assesment_ENT.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Login_Ent: Common_Mst_Ent
+    public class Login_Ent : Common_Mst_Ent
     {
         public string USER_ID { get; set; }
         public string USER_NAME { get; set; }
