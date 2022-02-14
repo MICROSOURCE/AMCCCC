@@ -72,6 +72,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Utils.cs" />
     <Content Include="assets\css\all.css" />
     <Content Include="assets\css\jquery-ui-1.10.3.custom.css" />
     <Content Include="assets\css\main-responsive.css" />
@@ -434,6 +435,7 @@
     <Content Include="JQuery\TestAJX.js" />
     <Content Include="JQuery\zebra_dialog.js" />
     <Content Include="Login.aspx" />
+    <Content Include="ReportView.aspx" />
     <Content Include="TRANSACTION\TRN_New_Assesment.aspx" />
     <Content Include="TRANSACTION\View_Tax_Details.aspx" />
     <Content Include="Web.config" />
@@ -461,7 +463,15 @@
     <Compile Include="MasterPages\MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReportDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportView.aspx.cs">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportView.aspx.designer.cs">
+      <DependentUpon>ReportView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TRANSACTION\TRN_New_Assesment.aspx.cs">
       <DependentUpon>TRN_New_Assesment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -553,7 +563,9 @@
       <Name>Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
