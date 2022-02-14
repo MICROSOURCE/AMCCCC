@@ -42,13 +42,17 @@ namespace AMCCCC.TRANSACTION
                 rptfactor.DataBind();
                 rptfloor.DataSource = _DS.Tables[0];
                 rptfloor.DataBind();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblTOTTAX") as Label).Text = _DS.Tables[0].Select().Sum(p => Convert.ToInt32(p["NETTAX"])).ToString();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblNETTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["GEN_TAX"])).ToString();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblWATERTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["WATER_TAX"])).ToString();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblCONSTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["CONSERVANCY_TAX"])).ToString();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblUSAGETAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["USAGE_CHARGE"])).ToString();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblEDUTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["EDU_TAX"])).ToString();
-                (rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblTOTPROPTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["TOT_PROP_TAX"])).ToString();
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblTOTTAX") as Label).Text = _DS.Tables[0].Select().Sum(p => Convert.ToInt32(p["NETTAX"]));
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblNETTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p("GEN_TAX")));
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblWATERTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p"WATER_TAX")));
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblCONSTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p("CONSERVANCY_TAX")));
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblUSAGETAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p("USAGE_CHARGE")));
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblEDUTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p("EDU_TAX")));
+
+
+                //(rptfloor.Controls[rptfloor.Controls.Count - 1].Controls[0].FindControl("lblTOTPROPTAX") as Label).Text = _DS.Tables[1].Select().Sum(p => Convert.ToInt32(p["TOT_PROP_TAX"]));
+
+
                 factor.Visible = true;
                 floor.Visible = true;
             }
