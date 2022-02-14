@@ -19,6 +19,7 @@ namespace AMCCCC.Helper
         private static Dictionary<object, object> _Dict;
         private static IDictionary<object, object> lst;
         private static string _message;
+       
 
         #endregion
 
@@ -144,5 +145,42 @@ namespace AMCCCC.Helper
             return result;
         }
         #endregion
+
+        public static bool verifyCheckDigit(string TenementNo)
+        {
+            int i = 0;
+            string strChar, checkDigit = string.Empty;
+            string TeneCheckDigit = TenementNo.Substring(14, 1);
+            int multi, total = default;
+            double remaidner;
+            while (i < 14)
+            {
+                strChar = TenementNo.Substring(i, 1);
+                multi = (int)Math.Round(Convert.ToDouble(strChar) * (16 - (i + 1)));
+                total = total + multi;
+                i = i + 1;
+            }
+
+            remaidner = total % 23;
+            remaidner = 23d - remaidner;
+            if (remaidner >= 1d & remaidner <= 22d)
+            {
+              //  checkDigit = Convert.ToString(Strings.Chr((int)Math.Round(64d + remaidner)));
+            }
+            else
+            {
+                checkDigit = "9";
+            }
+
+            if ((TeneCheckDigit ?? "") == (checkDigit ?? ""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

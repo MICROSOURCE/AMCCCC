@@ -25,15 +25,11 @@ namespace BusinessLogicLayer
             {
                 try
                 {
-                    {
-                        _DictParam = new Dictionary<string, object>();
-                        var withBlock = _DictParam;
-                        withBlock.Clear();
-                        withBlock.Add("P_USER_ID", EntLogin.USER_ID);
-                        withBlock.Add("P_USER_PWD", EntLogin.USER_PWD);
-                        withBlock.Add("P_LST_IP", EntLogin.LST_IP);
-                        withBlock.Add("P_CR_IP", EntLogin.LST_IP);
-                    }
+                    _DictParam = new Dictionary<string, object>();
+                    _DictParam.Add("P_USER_ID", EntLogin.USER_ID);
+                    _DictParam.Add("P_USER_PWD", EntLogin.USER_PWD);
+                    //withBlock.Add("P_LST_IP", EntLogin.LST_IP);
+                    _DictParam.Add("P_CR_IP", EntLogin.LST_IP);
 
                     Message = DBHelp.ExecuteProcedureDynamic("AMCDB.PRO_LOGIN", _DictParam);
 

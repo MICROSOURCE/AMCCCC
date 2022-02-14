@@ -373,6 +373,7 @@
     <Content Include="css\validationEngine.jquery.css" />
     <Content Include="css\ValidationSummary.css" />
     <Content Include="css\zebra_dialog.css" />
+    <Content Include="Home.aspx" />
     <Content Include="images\Access-Restricted-Websites.png" />
     <Content Include="images\Back.jpg" />
     <Content Include="images\Back.png" />
@@ -439,6 +440,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\Utils.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
