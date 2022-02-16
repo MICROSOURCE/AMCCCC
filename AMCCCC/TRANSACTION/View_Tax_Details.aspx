@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="View_Tax_Details.aspx.cs" Inherits="AMCCCC.TRANSACTION.View_Tax_Details" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="View_Tax_Details.aspx.cs" Inherits="AMCCCC.TRANSACTION.View_Tax_Details" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,8 +29,8 @@
                             <div class="col-sm-5">
                                 <asp:TextBox ID="txt_TENAMENT_NO" runat="server" CssClass="form-control " ClientIDMode="Static"></asp:TextBox>
                             </div>
-                            <asp:LinkButton ID="btnSearchReg" runat="server" CssClass="btn btn-primary" OnClick="btnSearchReg_Click"><i class="fa fa-search"></i> Search</asp:LinkButton>
-
+                          <%--  <asp:LinkButton ID="btnSearchReg" runat="server" CssClass="btn btn-primary" OnClick="btnSearchReg_Click"><i class="fa fa-search">
+                            </i> Search</asp:LinkButton>--%>
                         </div>
                     </div>
                 </div>
