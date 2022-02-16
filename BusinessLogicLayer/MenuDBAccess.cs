@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.DAL;
+﻿using DAL;
 using Entity;
 using System;
 using System.Collections.Generic;
