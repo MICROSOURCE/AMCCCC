@@ -127,104 +127,104 @@
             Main.init();
 
             <%--FormDet(<%=ViewState("FORM_DESC")%>);--%>
-                //FOR ENTER TO TAB
-                $('body').delegate("input,select,textarea", "keypress", function (e) {
-                    if (e.keyCode == 13) {
-                        var inputs = $(this).parents("form").eq(0).find(":input");
-                        var idx = inputs.index(this);
+            //FOR ENTER TO TAB
+            $('body').delegate("input,select,textarea", "keypress", function (e) {
+                if (e.keyCode == 13) {
+                    var inputs = $(this).parents("form").eq(0).find(":input");
+                    var idx = inputs.index(this);
 
-                        if (idx == inputs.length - 1) {
-                            inputs[0].select()
-                        } else {
+                    if (idx == inputs.length - 1) {
+                        inputs[0].select()
+                    } else {
 
-                            var nidx;
-                            nidx = idx + 1;
-                            while (nidx < inputs.length) {
-                                if ($(inputs[nidx]).is(":disabled") == true)
-                                    nidx += 1;
-                                else
-                                    break;
+                        var nidx;
+                        nidx = idx + 1;
+                        while (nidx < inputs.length) {
+                            if ($(inputs[nidx]).is(":disabled") == true)
+                                nidx += 1;
+                            else
+                                break;
 
-                            }
-                            inputs[nidx].focus(); //  handles submit buttons
                         }
-                        return false;
+                        inputs[nidx].focus(); //  handles submit buttons
                     }
+                    return false;
+                }
                 // add attributes to textbox[DO NOT DELETE THIS CODE, IT IS USE FOR SEARCHING IN ALL FORMS]
                 <%--var USER_ID = '<%=Session("USER_ID") %>'
                 var USER_TYPE = '<%=Session("USER_TYPE") %>'--%>
-                AddUserTypeNId(USER_ID, USER_TYPE);
-            });
+                    AddUserTypeNId(USER_ID, USER_TYPE);
+                });
 
-                //For BootStrap Message Boxk
-                UIModals.init();
-                //End 
+            //For BootStrap Message Boxk
+            UIModals.init();
+            //End 
 
-                //For the Date time Picker
-                Datepicker();
+            //For the Date time Picker
+            Datepicker();
             //End
 
             //Zebra Message Box
-            
-                var MyMsg = '<%=Session["Message"] %>';
-                if (MyMsg != '') {
-                    $('.main-navigation').css("z-index", "0");
-                }
-                else {
-                    $('.main-navigation').css("z-index", "1000");
-                }
-                //End
 
-                var path = window.location.pathname;
-                path = path.replace(/\/$/, "");
-                path = decodeURIComponent(path);
-                $(".sub-menu a").each(function () {
-                    var href = $(this).attr('href');
-                    if (path === href) {
-                        $(this).closest('li').addClass('active open');
-                        $(this).closest('ul').parent('li').addClass('active open');
-                        $(this).closest('ul').parent('li').find('a').append('<span class="selected"></span>');
-                    }
-                });
+            var MyMsg = '<%=Session["Message"] %>';
+            if (MyMsg != '') {
+                $('.main-navigation').css("z-index", "0");
+            }
+            else {
+                $('.main-navigation').css("z-index", "1000");
+            }
+            //End
 
+            var path = window.location.pathname;
+            path = path.replace(/\/$/, "");
+            path = decodeURIComponent(path);
+            $(".sub-menu a").each(function () {
+                var href = $(this).attr('href');
+                if (path === href) {
+                    $(this).closest('li').addClass('active open');
+                    $(this).closest('ul').parent('li').addClass('active open');
+                    $(this).closest('ul').parent('li').find('a').append('<span class="selected"></span>');
+                }
             });
+
+        });
     </script>
     <script type="text/javascript">
 
         function Message() {
             <%--var MyMsg = '<%=Session("Message") %>';--%>
 
-                var PartMsg = MyMsg.split("-");
-                if (MyMsg != '') {
+            var PartMsg = MyMsg.split("-");
+            if (MyMsg != '') {
 
 
-                    if (PartMsg[0] == '100') {
-                        $.Zebra_Dialog(PartMsg[1],
-                            {
-                                'type': 'confirmation',
-                                'title': 'Confirmation'
-                                , 'onClose': function () { $('.main-navigation').css("z-index", "1000"); }
-                            });
-                    }
-                    else if (PartMsg[0] == '999') {
-                        $('.main-navigation').css("z-index", "0");
-                        $.Zebra_Dialog(PartMsg[1],
-                            {
-                                'type': 'warning',
-                                'title': 'Warning'
-                                , 'onClose': function () { $('.main-navigation').css("z-index", "1000"); }
-                            });
-                    }
-                    else {
-                        $.Zebra_Dialog(MyMsg,
-                            {
-                                'type': 'error',
-                                'title': 'Error'
-                                , 'onClose': function () { $('.main-navigation').css("z-index", "1000"); }
-                            });
-                    }
-
+                if (PartMsg[0] == '100') {
+                    $.Zebra_Dialog(PartMsg[1],
+                        {
+                            'type': 'confirmation',
+                            'title': 'Confirmation'
+                            , 'onClose': function () { $('.main-navigation').css("z-index", "1000"); }
+                        });
                 }
+                else if (PartMsg[0] == '999') {
+                    $('.main-navigation').css("z-index", "0");
+                    $.Zebra_Dialog(PartMsg[1],
+                        {
+                            'type': 'warning',
+                            'title': 'Warning'
+                            , 'onClose': function () { $('.main-navigation').css("z-index", "1000"); }
+                        });
+                }
+                else {
+                    $.Zebra_Dialog(MyMsg,
+                        {
+                            'type': 'error',
+                            'title': 'Error'
+                            , 'onClose': function () { $('.main-navigation').css("z-index", "1000"); }
+                        });
+                }
+
+            }
             <%--'<%=Session("Message") = ""%>';--%>
         }
     </script>
@@ -253,7 +253,7 @@
                         <%--<a style="font-weight: 600;" class="navbar-brand" href="<% =ResolveClientUrl("Home.aspx")%>">--%>
                         <img src="../images/logo.png" style="height: 35px; margin-top: -5px;" />&nbsp;   <%--<%=Utils.getConStr("CORPNAME")%>--%> <%--</a>--%>
                         <%-- <img src="<% =ResolveClientUrl("images/logo.png")%>" style="height: 35px; margin-top: -5px;" />&nbsp;   <%--<%=Utils.getConStr("CORPNAME")%></a>--%>
-                        
+
                         <!-- end: LOGO -->
                     </div>
                     <div class="navbar-tools">
@@ -308,6 +308,16 @@
                         <!-- end: MAIN MENU TOGGLER BUTTON -->
                         <!-- start: MAIN NAVIGATION MENU -->
                         <ul class="main-navigation-menu" id="menu" runat="server">
+                            <div id="leftContent">
+                                <h3>Lessons</h3>
+                                <ul>
+                                    <li>TODO</li>
+                                </ul>
+                                <h3>News</h3>
+                                <ul>
+                                    <li>TODO</li>
+                                </ul>
+                            </div>
                         </ul>
                         <!-- end: MAIN NAVIGATION MENU -->
                     </div>
