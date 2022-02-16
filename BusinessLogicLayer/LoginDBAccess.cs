@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.DAL;
+using DAL;
 using Entity;
 //using Entity.ENT;
 
@@ -31,7 +31,7 @@ namespace BusinessLogicLayer
                     //withBlock.Add("P_LST_IP", EntLogin.LST_IP);
                     _DictParam.Add("P_CR_IP", EntLogin.LST_IP);
 
-                    Message = DBHelp.ExecuteProcedureDynamic("AMCDB.PRO_LOGIN", _DictParam);
+                    Message = DBHelp.ExecuteProcedureDynamic("AMCDB.PRO_LOGIN", _DictParam,"");
 
                     if (Message.Substring(0, 3) != "100")
                         return Message;

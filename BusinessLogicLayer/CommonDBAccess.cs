@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.DAL;
+﻿using DAL;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace BusinessLogicLayer
         #region 
         private string Message;
         private string str;
-        private Dictionary<string, object> _DictParam;
+        private Dictionary<string, object> _DictParam = new Dictionary<string, object>();
         private DataTable _DT;
         private DataSet _DS;
         #endregion

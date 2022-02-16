@@ -81,7 +81,8 @@ namespace AMCCCC
                         Session["ROLE_DESC"] = StrArr[2];
                         Session["MENU"] = "";
                         Session["MOD_ID"] = "10";
-                        Response.Redirect("~/Home.aspx");                      
+                        Response.Redirect("~/Home.aspx",false);
+                        Context.ApplicationInstance.CompleteRequest();
                     }
                     else
                         lblMSG.Text = Message;

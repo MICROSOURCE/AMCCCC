@@ -20,7 +20,7 @@ namespace AMCCCC
                 // For The Insert Rights
                 using (var BLL = new MenuDBAccess())
                 {
-                    listRights = BLL.GetFormRights(Session["USER_ROLE"].ToString(), "029000", Session["MOD_ID"].ToString());
+                    listRights = BLL.GetFormRights(Session["USER_ROLE"].ToString(), "109000", Session["MOD_ID"].ToString());
                 }
                 bool flg = Utils.verifyCheckDigit("05133310170001A");
                 if (listRights.First().ACCESS == "N")
