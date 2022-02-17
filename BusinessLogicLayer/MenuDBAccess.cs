@@ -66,8 +66,11 @@ namespace BusinessLogicLayer
                 Dt = DBHelp.GetDataTableDirect(str);
             }
             var iDict = new Dictionary<string, string>();
-            for (int i = 0, loopTo = Dt.Columns.Count - 1; i <= loopTo; i++)
-                iDict.Add(Dt.Columns[i].ColumnName, Dt.Rows[0][i].ToString());
+            if (Dt.Rows.Count != 0)
+            {
+                for (int i = 0, loopTo = Dt.Columns.Count - 1; i <= loopTo; i++)
+                    iDict.Add(Dt.Columns[i].ColumnName, Dt.Rows[0][i].ToString());
+            }
             return iDict;
         }
 

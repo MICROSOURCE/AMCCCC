@@ -38,7 +38,8 @@ namespace AMCCCC
             objEnt.PARAM1 = Session["MOD_ID"].ToString();
             var menu = DbAccess.GetData("AMCDB.PRO_GET_MST_DATA", objEnt);
 
-            
+            //var WARDATA = DbAccess.GetData("AMCDB.PRO_GET_WARD_MAST", objEnt);
+
             foreach (DataRow row in menu.Rows)
             {
                 var Ent = new Menu_Entities();

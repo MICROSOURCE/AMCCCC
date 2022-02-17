@@ -106,51 +106,57 @@ namespace AMCCCC.MasterPages
                     {
                         formName = formName.Substring(0, i - 2);
                     }
-                    iDict = BLL.GetModuleDet(formName, Session["MOD_ID"].ToString());
-                    lblFORM_NAME.Text = iDict["FORM_ETITLE"];
-                    lblMODULE_NAME.Text = iDict["MOD_ENAME"];
-                    ViewState["FORM_DESC"] = "'" + iDict["FORM_DESC"] + "'";
-                    Session["MODID"] = iDict["MOD_ID"];
-                    Session["FORMID"] = iDict["FORM_ID"];
+                    if (iDict.Count != 0)
+                    {
+                        iDict = BLL.GetModuleDet(formName, Session["MOD_ID"].ToString());
+                        lblFORM_NAME.Text = iDict["FORM_ETITLE"];
+                        lblMODULE_NAME.Text = iDict["MOD_ENAME"];
+                        ViewState["FORM_DESC"] = "'" + iDict["FORM_DESC"] + "'";
+                        Session["MODID"] = iDict["MOD_ID"];
+                        Session["FORMID"] = iDict["FORM_ID"];
+                        if (iDict["FORM_TYPE"] != "G")
+                        {
+                            listRights = BLL.GetFormRights(Session["USER_ROLE"].ToString(), Convert.ToString(Session["FORMID"]), Session["MOD_ID"].ToString());
+                        }
+                    }
+                }
+                if (iDict.Count != 0)
+                {
                     if (iDict["FORM_TYPE"] != "G")
                     {
-                        listRights = BLL.GetFormRights(Session["USER_ROLE"].ToString(), Convert.ToString(Session["FORMID"]), Session["MOD_ID"].ToString());
+                        //Form Rights Property Set
+                        R_ADD = listRights[0].R_ADD;
+                        R_EDIT = listRights[0].R_EDIT;
+                        if (R_EDIT == "Y")
+                        {
+                            S_EDIT = "Y";
+                            R_READ = "Y";
+                        }
+                        else
+                        {
+                            R_READ = listRights[0].R_READ;
+                            S_EDIT = listRights[0].S_EDIT;
+                        }
+                        R_DEL = listRights[0].R_DEL;
+                        if (R_DEL == "Y")
+                            S_DEL = "Y";
+                        else
+                            S_DEL = listRights[0].S_DEL;
+                        ACCESS = listRights[0].ACCESS;
+                        if (ACCESS == "N")
+                        {
+                            Response.Redirect("~/Access_Denied.aspx", false);
+                        }
+                        chkR_ADD.Checked = (R_ADD == "Y");
+                        chkR_EDIT.Checked = (R_EDIT == "Y");
+                        chkR_DEL.Checked = (R_DEL == "Y");
+                        chkR_READ.Checked = (R_READ == "Y");
+                        chkS_EDIT.Checked = (S_EDIT == "Y");
+                        chkS_DEL.Checked = (S_DEL == "Y");
+                        Rights.Visible = true;
                     }
+                    else { Rights.Visible = false; }
                 }
-                if (iDict["FORM_TYPE"] != "G")
-                {
-                    //Form Rights Property Set
-                    R_ADD = listRights[0].R_ADD;
-                    R_EDIT = listRights[0].R_EDIT;
-                    if (R_EDIT == "Y")
-                    {
-                        S_EDIT = "Y";
-                        R_READ = "Y";
-                    }
-                    else
-                    {
-                        R_READ = listRights[0].R_READ;
-                        S_EDIT = listRights[0].S_EDIT;
-                    }
-                    R_DEL = listRights[0].R_DEL;
-                    if (R_DEL == "Y")
-                        S_DEL = "Y";
-                    else
-                        S_DEL = listRights[0].S_DEL;
-                    ACCESS = listRights[0].ACCESS;
-                    if (ACCESS == "N")
-                    {
-                        Response.Redirect("~/Access_Denied.aspx", false);
-                    }
-                    chkR_ADD.Checked = (R_ADD == "Y");
-                    chkR_EDIT.Checked = (R_EDIT == "Y");
-                    chkR_DEL.Checked = (R_DEL == "Y");
-                    chkR_READ.Checked = (R_READ == "Y");
-                    chkS_EDIT.Checked = (S_EDIT == "Y");
-                    chkS_DEL.Checked = (S_DEL == "Y");
-                    Rights.Visible = true;
-                }
-                else { Rights.Visible = false; }
             }
         }
         protected void Page_PreInit(object sender, EventArgs e)

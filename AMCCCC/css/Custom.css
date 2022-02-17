@@ -45,7 +45,14 @@ to access*/
 .panel-heading {
     font-weight: bold;
 }
-
+.panel-info > .panel-heading {
+    background-color: blue !important;
+}
+    .custom > .panel-heading {
+        color: #333 !important;
+        background-color: blue !important;
+        border-color: #ddd !important;
+    }
 .control-label {
     color: black;
     font-family: Verdana;

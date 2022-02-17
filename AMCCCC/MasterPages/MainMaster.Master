@@ -311,7 +311,9 @@
                             <div id="leftContent">
                                 <h3>Lessons</h3>
                                 <ul>
-                                    <li>TODO</li>
+                                    <li><a href="TRANSACTION/TRN_New_Assesment.aspx">TRN_New_Assesment</a></li>
+                                    <li><a href="PropertyTax/NewChangeRequestComplaint.aspx">NewChangeRequestComplaint</a></li>
+
                                 </ul>
                                 <h3>News</h3>
                                 <ul>
