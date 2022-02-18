@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="AMCCCC.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="AMCCCC.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <!-- start: PAGE CONTENT -->
   <div class="row">
