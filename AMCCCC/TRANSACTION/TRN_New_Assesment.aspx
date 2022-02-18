@@ -1,5 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="TRN_New_Assesment.aspx.cs" Inherits="AMCCCC.TRANSACTION.TRN_New_Assesment" %>
+﻿
 
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MainMaster.Master" AutoEventWireup="true" CodeBehind="TRN_New_Assesment.aspx.cs" Inherits="AMCCCC.TRANSACTION.TRN_New_Assesment" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
         <div class="row">

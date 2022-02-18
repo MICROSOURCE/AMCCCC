@@ -25,6 +25,7 @@ namespace BusinessLogicLayer
         {
             lstMenu = new List<Menu_Entities>();
             DataTable table;
+           
             using (var objEnt = new Common_Mst_Ent())
             {
                 objEnt.FLAG = "INTRA_GET_MENU_LIST";
@@ -65,8 +66,11 @@ namespace BusinessLogicLayer
                 Dt = DBHelp.GetDataTableDirect(str);
             }
             var iDict = new Dictionary<string, string>();
-            for (int i = 0, loopTo = Dt.Columns.Count - 1; i <= loopTo; i++)
-                iDict.Add(Dt.Columns[i].ColumnName, Dt.Rows[0][i].ToString());
+            if (Dt.Rows.Count != 0)
+            {
+                for (int i = 0, loopTo = Dt.Columns.Count - 1; i <= loopTo; i++)
+                    iDict.Add(Dt.Columns[i].ColumnName, Dt.Rows[0][i].ToString());
+            }
             return iDict;
         }
 
